@@ -4,6 +4,29 @@
     border: 0;
 
 }
+.layers__container{
+    transform-style: preserve-3d;
+    will-change: transform;
+    width: 100vw;
+    height: 100vh;
+}
+.layers__items{
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+} 
+.background{
+    transform: translateZ(-50px) scale(1.1);
+}
+.head-text{
+    transform: translateZ(80px) scale(0.8);
+}
+.hero{
+    perspective: 1000px;
+    overflow: hidden;
+
+}
+
 header{
     display: flex;
     align-items: center;
@@ -28,6 +51,8 @@ header{
     text-align: center;
     border: 2px solid #E8E0CC;
     border-radius: 20px;
+    margin-left: 585px;
+    margin-top: 30%;
 }
 .about{
     margin: 200px;
