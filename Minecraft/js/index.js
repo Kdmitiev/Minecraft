@@ -55,3 +55,29 @@ function initGallery(){
     })
 }
 document.addEventListener("DOMContentLoaded", initGallery)
+
+
+function initPlayer(){
+    const btn=document.querySelector(".play-btn")
+    const audio = document.getElementById("AudioPlayer")
+
+    btn.addEventListener("click", ()=>{
+        if (audio.paused){
+            audio.play()
+            btn.innerHTML = '<i class="fas fa-pause"></i>'
+
+        }else {
+            audio.pause()
+            btn.innerHTML = '<i class="fas fa-play"></i>'
+        }
+    })
+    const time = document.querySelector(".time")
+    audio.addEventListener("timeupdate", ()=>{
+        let minutes = Math.floor(audio.currentTime / 60)
+        let seconds = Math.floor(audio.currentTime % 60).toString().padStart(2,"0")
+        let maxminutes = Math.floor(audio.duration / 60)
+        let maxseconds = Math.floor(audio.duration % 60).toString().padStart(2,"0")
+        time.innerHTML = `${minutes}:${seconds} / ${maxminutes}:${maxseconds}`
+    })
+}
+document.addEventListener("DOMContentLoaded", initPlayer)
